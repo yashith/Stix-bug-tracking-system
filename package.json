@@ -13,7 +13,12 @@
     "react-dom": "^16.13.1",
     "react-modal": "^3.11.2",
     "react-router-dom": "^5.2.0",
+<<<<<<< HEAD
     "react-scripts": "^3.4.4"
+=======
+    "react-scripts": "3.4.3",
+    "react-select": "^2.0.0-beta.7"
+>>>>>>> bb69aa0079f9892ed7ce2d8730abcb038930ce0b
   },
   "scripts": {
     "start": "react-scripts start",
