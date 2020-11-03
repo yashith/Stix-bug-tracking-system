@@ -5,11 +5,9 @@ import { Container, Row, Form,  Button,Col } from 'react-bootstrap';
 function IsseForm(props){
     const warningstyle = { color: 'red' };
     const validate = values => {
-        const a='Select project';
+        
         const errors = {}
-        if (values.project===a) {
-            errors.project = 'Required'
-        }
+
         if (!values.summery) {
             errors.summery = 'Required'
         }
@@ -44,14 +42,7 @@ function IsseForm(props){
                 <Row>
                     <Form onSubmit={formik.handleSubmit}>
 
-                        <Form.Group>
-                            <Form.Label>Project</Form.Label>
-                            <Form.Control as="select"  name="project" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.project}>{/*set error handler*/}
-                                {projectlist.map((project) => <option value={project} label={project}/>)}
-                                
-                            </Form.Control>
-                            {formik.errors.project && formik.touched.project ? <Form.Text style={warningstyle}>{formik.errors.project}</Form.Text> : null}
-                        </Form.Group>
+                        
                         {/* summery of the bug */}
                         <Form.Group>
                             <Form.Label>Summary</Form.Label>
