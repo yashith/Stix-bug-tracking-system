@@ -23,7 +23,7 @@ function IsseForm(props){
     }
     const formik = useFormik({
         initialValues: {
-            project: '',
+            project: '', //Import project value from project card
             summery: '',
             result: '',
             expected: '',
