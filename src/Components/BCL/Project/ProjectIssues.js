@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component,useState } from 'react'
 import { BrowserRouter as Router, Route,Link, Switch } from "react-router-dom";
 import {Table,Row,Col,Button,Card,NavLink,Form, FormControl} from 'react-bootstrap';
+import Modal from 'react-modal'
+import IssueForm from '../CreateIssue/IssueForm'
 //import Pagination from './Pagination';
 function ProjectIssues() {
-    
+    const [isModelOpen, setisModelOpen] = useState(false);
   return (
       <div className="">
     
@@ -44,9 +46,15 @@ function ProjectIssues() {
                   <div className="d-flex p-2 bd-highlight">
                       <Col md={4}>
                         
-                      <Link to="BclNext/ProjectIssues">  
-                           <Button className="mr-sm-2" variant="info"  data-toggle="tooltip" title="Go to issues">Add Issue</Button>
-                      </Link>
+                        
+                        <Button className="mr-sm-2" variant="info"  data-toggle="tooltip" title="Go to issues" 
+                        onClick={()=>setisModelOpen(true)}
+                        >
+                            Add Issue</Button>
+                        <Modal isOpen={isModelOpen}>
+                            <IssueForm cl={()=>setisModelOpen(false)}/>
+                        </Modal>
+                      
                       </Col>
                       <Col md={3}>
                       <Link to="BclNext/ProjectIssues">  

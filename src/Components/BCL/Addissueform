@@ -11,7 +11,7 @@ function BugReportForm() {
     // }
     const warningstyle = { color: 'red' };
     const validate = values => {
-
+        
         const errors = {}
         if (!values.summery) {
             errors.summery = 'Required'
